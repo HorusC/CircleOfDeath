@@ -1,12 +1,25 @@
 package edu.augustana.csc490.circleofdeath;
 
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.app.*;
+import android.view.Gravity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.*;
+import android.app.Fragment;
+import android.media.AudioManager;
+import android.view.ViewGroup;
+import android.view.LayoutInflater;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private boolean dialogIsDisplayed = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +48,31 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void disclaimer (final int messageId){
+        final DialogFragment discl = new DialogFragment(){
+            @Override
+            public Dialog onCreateDialog(Bundle bundle){
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle(getResources().getString(messageId));
+                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which){
+                        dialogIsDisplayed = false;
+                    }
+                });
+                return builder.create();
+            }
+        };
+        activity.runOnUiThread(
+                new Runnable() {
+                    public void run() {
+                        dialogIsDisplayed = true;
+                        discl.setCancelable(false);
+                        discl.show(activity.getFragmentManager(), "Ok");
+                    }
+                }
+        );
     }
 }
