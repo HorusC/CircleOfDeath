@@ -20,11 +20,21 @@ import android.view.LayoutInflater;
 public class MainActivity extends ActionBarActivity {
 
     private boolean dialogIsDisplayed = false;
+    private Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        new AlertDialog.Builder(this)
+                .setTitle("Disclaimer")
+                .setMessage("GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems. Drink Responsibly")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
 
@@ -50,29 +60,5 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void disclaimer (final int messageId){
-        final DialogFragment discl = new DialogFragment(){
-            @Override
-            public Dialog onCreateDialog(Bundle bundle){
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle(getResources().getString(messageId));
-                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener(){
-                    @Override
-                    public void onClick(DialogInterface dialog, int which){
-                        dialogIsDisplayed = false;
-                    }
-                });
-                return builder.create();
-            }
-        };
-        activity.runOnUiThread(
-                new Runnable() {
-                    public void run() {
-                        dialogIsDisplayed = true;
-                        discl.setCancelable(false);
-                        discl.show(activity.getFragmentManager(), "Ok");
-                    }
-                }
-        );
-    }
+
 }
