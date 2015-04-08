@@ -15,6 +15,4 @@ public class Card {
         this.number = num;
         this.cardImage = image;
     }
-
-
 }

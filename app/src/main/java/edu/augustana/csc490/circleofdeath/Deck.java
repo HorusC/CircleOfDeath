@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
 import au.com.bytecode.opencsv.CSVReader;
 
 /**
@@ -17,7 +19,7 @@ public class Deck {
 
     public Deck() {
         //Code courtesy of Dan and I's team Egret project.
-        String filename = "";
+        String filename = "Deck.csv";
 
         cards = new ArrayList<Card>();
 
@@ -39,5 +41,7 @@ public class Deck {
         }
     }
 
-
+    public void shuffle() {
+        Collections.shuffle(cards, new Random());
+    }
 }
