@@ -26,7 +26,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new AlertDialog.Builder(this)
+        new AlertDialog.Builder(this) //Makes the disclaimer pop up as soon as it opens.
                 .setTitle("Disclaimer")
                 .setMessage("GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems. Drink Responsibly")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
