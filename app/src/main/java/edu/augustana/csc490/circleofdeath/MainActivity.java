@@ -39,6 +39,9 @@ public class MainActivity extends ActionBarActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        AboutButton = (Button) findViewById(R.id.AboutButton);
+        PlayButton = (Button) findViewById(R.id.PlayButton);
+
         new AlertDialog.Builder(this) //Makes the disclaimer pop up as soon as it opens.
                 .setTitle("Disclaimer")
                 .setMessage("GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems. Drink Responsibly")
@@ -48,6 +51,27 @@ public class MainActivity extends ActionBarActivity {
                 })
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
+
+        AboutButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("About")
+                        .setMessage("Code and images courtesy of:\nDan Shultz\nhttp://www.jfitz.com/cards/")
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
+                }
+        });
+
+        PlayButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GameActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
