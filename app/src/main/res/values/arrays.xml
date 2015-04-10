@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cards">
+        <item>Ace of Spades</item>
+        <item>Two of Spades</item>
+        <item>Three of Spades</item>
+        <item>Four of Spades</item>
+        <item>Five of Spades</item>
+        <item>Six of Spades</item>
+        <item>Seven of Spades</item>
+        <item>Eight of Spades</item>
+        <item>Nine of Spades</item>
+        <item>Ten of Spades</item>
+        <item>Jack of Spades</item>
+        <item>Queen of Spades</item>
+        <item>King of Spades</item>
+        <item>Ace of Clubs</item>
+        <item>Two of Clubs</item>
+        <item>Three of Clubs</item>
+        <item>Four of Clubs</item>
+        <item>Five of Clubs</item>
+        <item>Six of Clubs</item>
+        <item>Seven of Clubs</item>
+        <item>Eight of Clubs</item>
+        <item>Nine of Clubs</item>
+        <item>Ten of Clubs</item>
+        <item>Jack of Clubs</item>
+        <item>Queen of Clubs</item>
+        <item>King of Clubs</item>
+        <item>Ace of Hearts</item>
+        <item>Two of Hearts</item>
+        <item>Three of Hearts</item>
+        <item>Four of Hearts</item>
+        <item>Five of Hearts</item>
+        <item>Six of Hearts</item>
+        <item>Seven of Hearts</item>
+        <item>Eight of Hearts</item>
+        <item>Nine of Hearts</item>
+        <item>Ten of Hearts</item>
+        <item>Jack of Hearts</item>
+        <item>Queen of Hearts</item>
+        <item>King of Hearts</item>
+        <item>Ace of Diamonds</item>
+        <item>Two of Diamonds</item>
+        <item>Three of Diamonds</item>
+        <item>Four of Diamonds</item>
+        <item>Five of Diamonds</item>
+        <item>Six of Diamonds</item>
+        <item>Seven of Diamonds</item>
+        <item>Eight of Diamonds</item>
+        <item>Nine of Diamonds</item>
+        <item>Ten of Diamonds</item>
+        <item>Jack of Diamonds</item>
+        <item>Queen of Diamonds</item>
+        <item>King of Diamonds</item>
+    </string-array>
+</resources>

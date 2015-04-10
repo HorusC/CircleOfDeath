@@ -1,31 +1,44 @@
 package edu.augustana.csc490.circleofdeath;
 
 import android.content.DialogInterface;
+import android.content.res.AssetManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.app.*;
-import android.view.Gravity;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.*;
-import android.app.Fragment;
-import android.media.AudioManager;
-import android.view.ViewGroup;
-import android.view.LayoutInflater;
+import java.util.Set;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
+import android.view.Display;
+import android.view.WindowManager;
 
 
 public class MainActivity extends ActionBarActivity {
 
     private boolean dialogIsDisplayed = false;
+    private boolean phoneDevice = true;
     private Activity activity;
+    private Button PlayButton;
+    private Button AboutButton;
+    private ImageView cardView;
+    private Deck theDeck;
+    private Button newCardButton;
+    private Button directionsButton;
+    private ScrollView cardInfoScroller;
+    private TextView cardInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         new AlertDialog.Builder(this) //Makes the disclaimer pop up as soon as it opens.
                 .setTitle("Disclaimer")
                 .setMessage("GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems. Drink Responsibly")
@@ -59,6 +72,4 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }
