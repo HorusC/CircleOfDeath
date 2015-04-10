@@ -11,15 +11,14 @@
         android:rowCount="3">
 
         <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/cardView"
-            android:layout_gravity="center|top"
-            android:src="@drawable/aceofclubs"
+            android:layout_gravity="center"
+            android:src="@drawable/clubs2"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
             android:layout_weight="3"
-            android:minHeight="400dp"
             android:layout_column="0"
             android:layout_row="0"
             android:layout_rowWeight="4" />
