@@ -26,7 +26,6 @@ public class MainActivity extends ActionBarActivity {
     private Button PlayButton;
     private Button AboutButton;
     private ImageView cardView;
-    private Deck theDeck;
     private Button newCardButton;
     private Button directionsButton;
     private ScrollView cardInfoScroller;
